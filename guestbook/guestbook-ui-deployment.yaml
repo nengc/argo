@@ -44,13 +44,13 @@ spec:
         command:
           - "redis-server"
         args:
-          - "/etc/redis/redis.conf"
+          - "/usr/local/etc/redis/redis.conf"
         ports:
         - name: redis
           containerPort: 6379
         volumeMounts:
           - name: "redis-conf"
-            mountPath: "/etc/redis"
+            mountPath: "/usr/local/etc/redis"
       volumes:
       - name: "redis-conf"
         hostPath:
