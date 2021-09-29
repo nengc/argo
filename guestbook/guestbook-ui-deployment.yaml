@@ -41,6 +41,21 @@ spec:
       containers:
       - name: redis
         image: redis:alpine
+        command:
+          - "redis-server"
+        args:
+          - "/etc/redis/redis.conf"
         ports:
         - name: redis
           containerPort: 6379
+        volumeMounts:
+          - name: "redis-conf"
+            mountPath: "/etc/redis"
+      volumes:
+      - name: "redis-conf"
+        configMap:
+          name: "redis-conf"
+          items:
+            - key: "redis.conf"
+              path: "redis.conf"
+
