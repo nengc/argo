@@ -53,9 +53,5 @@ spec:
             mountPath: "/etc/redis"
       volumes:
       - name: "redis-conf"
-        configMap:
-          name: "redis-conf"
-          items:
-            - key: "redis.conf"
-              path: "./redis.conf"
-
+        hostPath:
+          path: "/Users/neng.cao/Documents/code/k8s/argo/redis"
