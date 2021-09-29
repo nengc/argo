@@ -25,4 +25,4 @@ spec:
   ports:
   - protocol: TCP
     targetPort: 6379
-    port: 6378
+    port: 6379
