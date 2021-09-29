@@ -19,10 +19,10 @@ metadata:
   name: redis
   namespace: default
 spec:
-  type: ClusterIP ### may be ommited as it is a default type
+  type: ClusterIP
   selector:
-    name: redis ### should match your labels defined for your angular pods
+    name: redis
   ports:
   - protocol: TCP
-    targetPort: 6379 ### port your angular app listens on
-    port: 6379 ### port on which you want to expose it within your cluster
+    targetPort: 6379
+    port: 6379
